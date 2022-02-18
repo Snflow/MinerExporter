@@ -1,0 +1,128 @@
+{
+    "minerMonitors": [
+        {
+            "monitorArgs": {
+                "HiveOSMonitor": {
+                    "farm_id": "930621",
+                    "worker_id": "3649577"
+                }
+            },
+            "tag": {
+                "id": "_use_default",
+                "name": "_use_default"
+            },
+            "defaultLabels": {
+                "id": "0",
+                "name": "NVIDIA GeForce RTX 3090"
+            },
+            "metrics": {
+                "miner_device_gpu_temperature": "HiveOSMonitor.gpu_stats.0.temp",
+                "miner_device_gpu_mem_temperature": "HiveOSMonitor.auxiliary.gpu_mem_temp",
+                "miner_device_gpu_hot_temperature": "HiveOSMonitor.auxiliary.gpu_hot_temp",
+                "miner_device_cpu_temperature": "HiveOSMonitor.hardware_stats.cputemp.0",
+                "miner_device_gpu_power": "HiveOSMonitor.gpu_stats.0.power",
+                "miner_device_core_clock": "HiveOSMonitor.auxiliary.gpu_core_clock",
+                "miner_device_mem_clock": "HiveOSMonitor.auxiliary.gpu_mem_clock",
+                "miner_device_hashrate": "HiveOSMonitor.auxiliary.eth_hashrate",
+                "miner_device_accepted_shares": "HiveOSMonitor.miners_summary.hashrates.0.shares.accepted",
+                "miner_device_rejected_shares": "HiveOSMonitor.miners_summary.hashrates.0.shares.rejected",
+                "miner_device_invalid_shares": "HiveOSMonitor.miners_summary.hashrates.0.shares.invalid",
+                "miner_pool_latency": "HiveOSMonitor.auxiliary.latency",
+                "miner_device_uptime": "HiveOSMonitor.auxiliary.uptime",
+                "miner_cpu_device_hashrate": "HiveOSMonitor.auxiliary.rtm_hashrate",
+                "miner_cpu_device_uptime": "HiveOSMonitor.auxiliary.uptime",
+                "miner_cpu_device_latency": "HiveOSMonitor.auxiliary.latency",
+                "miner_cpu_device_accepted_shares": "HiveOSMonitor.miners_summary.hashrates.1.shares.accepted",
+                "miner_cpu_device_invalid_shares": "HiveOSMonitor.miners_summary.hashrates.1.shares.rejected"
+            }
+        },
+        {
+            "monitorArgs": {
+                "PhoenixMinerMonitor": {
+                    "ip": "192.168.1.209",
+                    "port": 5700
+                },
+                "GPUZMonitor": {
+                    "ip": "192.168.1.209",
+                    "port": 27476,
+                    "enable_list": {
+                        "gpu_temperature": 71,
+                        "gpu_hot_temperature":72,
+                        "gpu_mem_temperature": 73,
+                        "cpu_temperature": 86,
+                        "core_clock": 66,
+                        "mem_clock": 67,
+                        "gpu_power": 83
+                    }
+                },
+                "XMRigMinerMonitor": {
+                    "ip": "192.168.1.209",
+                    "port": 5900
+                }
+            },
+            "tag": {
+                "id": "PhoenixMinerMonitor.id",
+                "name": "PhoenixMinerMonitor.name"
+            },
+            "defaultLabels": {
+                "id": "0",
+                "name": "AMD Radeon RX 5700"
+            },
+            "metrics": {
+                "miner_device_gpu_temperature": "GPUZMonitor.gpu_temperature",
+                "miner_device_gpu_mem_temperature": "GPUZMonitor.gpu_mem_temperature",
+                "miner_device_gpu_hot_temperature": "GPUZMonitor.gpu_hot_temperature",
+                "miner_device_cpu_temperature": "GPUZMonitor.cpu_temperature",
+                "miner_device_gpu_power": "GPUZMonitor.gpu_power",
+                "miner_device_core_clock": "GPUZMonitor.core_clock",
+                "miner_device_mem_clock": "GPUZMonitor.mem_clock",
+                "miner_device_hashrate": "PhoenixMinerMonitor.hashrate",
+                "miner_device_accepted_shares": "PhoenixMinerMonitor.accepted_shares",
+                "miner_device_rejected_shares": "PhoenixMinerMonitor.rejected_shares",
+                "miner_device_invalid_shares": "PhoenixMinerMonitor.invalid_shares",
+                "miner_pool_latency": "PhoenixMinerMonitor.latency",
+                "miner_device_uptime": "PhoenixMinerMonitor.uptime",
+                "miner_cpu_device_hashrate": "XMRigMinerMonitor.hashrate.total.0",
+                "miner_cpu_device_uptime": "XMRigMinerMonitor.uptime",
+                "miner_cpu_device_latency": "XMRigMinerMonitor.connection.ping",
+                "miner_cpu_device_accepted_shares": "XMRigMinerMonitor.results.shares_good",
+                "miner_cpu_device_invalid_shares": "XMRigMinerMonitor.results.shares_invalid"
+            }
+        }
+    ],
+    "poolMonitors": {
+        "monitorArgs": {
+            "EthermineMonitor": {
+                "address": "ffCd69D9EEc40b6A858cAd0daf30Ebc1A9287a85",
+                "workerRigMap": {
+                    "rtx3090pc": "NVIDIA GeForce RTX 3090",
+                    "5950_3090_rig": "NVIDIA GeForce RTX 3090",
+                    "rx5700pc": "AMD Radeon RX 5700"
+                }
+            },
+            "FlockpoolMonitor": {
+                "address": "RTKF8aYzVGi9aUjbhaffan6hEwbQvDpmkY",
+                "workerRigMap": {
+                    "5950X": "NVIDIA GeForce RTX 3090",
+                    "5950_3090_Rig": "NVIDIA GeForce RTX 3090",
+                    "5900X": "AMD Radeon RX 5700"
+                }
+            }
+        },
+        "metrics": {
+            "miner_pool_hashrate_current": "EthermineMonitor.currentHashrate",
+            "miner_pool_hashrate_average_24h": "EthermineMonitor.averageHashrate",
+            "miner_pool_hashrate_reported": "EthermineMonitor.reportedHashrate",
+            "miner_pool_accepted_shares_1h": "EthermineMonitor.validShares",
+            "miner_pool_stale_shares_1h": "EthermineMonitor.staleShares",
+            "miner_pool_invalid_shares_1h": "EthermineMonitor.invalidShares",
+            "miner_pool_balance": "EthermineMonitor.balance",
+            "miner_cpu_pool_hashrate_current": "FlockpoolMonitor.hashrate.now",
+            "miner_cpu_pool_hashrate_average_24h": "FlockpoolMonitor.hashrate.avg",
+            "miner_cpu_pool_accepted_shares_24h": "FlockpoolMonitor.shares.accepted",
+            "miner_cpu_pool_stale_shares_24h": "FlockpoolMonitor.shares.stale",
+            "miner_cpu_pool_invalid_shares_24h": "FlockpoolMonitor.shares.rejected",
+            "miner_cpu_pool_balance": "FlockpoolMonitor.balance"
+        }
+    }
+}
